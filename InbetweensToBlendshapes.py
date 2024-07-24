@@ -1,12 +1,15 @@
 import os
 import maya.cmds as cmds
 
+# Generic create blendshape
 def create_blendshape(base, target):
     cmds.select(target, base, r=True)
     blendshape = cmds.blendShape(n="{}_to_{}".format(base, target))[0]
     print("Created blendShape: {}_to_{}".format(base, target))
     return blendshape
 
+# Duplicates the selected node, 
+# then applies a blend shape to it (duplicate is the base shape)
 def duplicate_and_blend(source, target):
     cmds.select(source, r=True)
     duplicate = cmds.duplicate(n="{}_DUPLICATE".format(source))[0]
@@ -14,6 +17,7 @@ def duplicate_and_blend(source, target):
     create_blendshape(duplicate, target)
 
 def convert_inbetweens_to_blendshapes():
+    # get the users selection
     selection = cmds.ls(sl=True)
     if len(selection) < 2:
         cmds.error("Please select at least two objects: the start shape and one or more in-between shapes.")
