@@ -1,8 +1,9 @@
 # Maya Tools
 
 ## General Usage of Scripts
-1. Select the shelf (a tab in the top ribbon) you want to add the script to
-2. Open script editor (Windows -> General -> Script Editor)
+1. Copy the contents of a python script from this repo
+2. Select the shelf (a tab in the top ribbon) you want to add the script to
+3. Open script editor (Windows -> General -> Script Editor)
 4. Paste in script (Python Tab)
 5. Click "save script to shelf"
 6. A new button will now be added to the shelf, use this to run the script
